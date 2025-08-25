@@ -26,3 +26,12 @@ def find_sublist(hay, needle):
         if hay[i:i+Ln] == needle:
             return i
     return -1
+
+def len_tokens(input_dict):
+    labels = input_dict['labels']
+    result = len(labels) - 1
+    
+    while labels[result] == -100:
+        result -= 1
+   
+    return result + 1
